@@ -9,6 +9,5 @@ export const selectActiveQuestion = (appStore: Store): Question => {
     const locale = selectLocale(appStore);
     const questionnaire = pickQuestionnaire(appStore);
     const activeQuestion = pickActiveQuestion(appStore);
-    const question = questionnaire.questions[activeQuestion];
-    return toSelectorQuestion(locale, question, questionnaire.questions, questionnaire.answers);
+    return toSelectorQuestion(locale, activeQuestion, questionnaire.questions, questionnaire.answers);
 };
